@@ -12,7 +12,15 @@ const Navbar = () => {
   return (
     <nav className="mb-20 flex justify-between items-center py-6">
       <div className="flex flex-shrink-0 items-center">
-        <img className="mx-2 w-10" src={logo} alt="Logo" />
+        <motion.h4
+          variants={linkVariants}
+          initial="initial"
+          animate="animate"
+          transition={{ duration: 0.5 }}
+          className="text-4xl"
+        >
+          RS
+        </motion.h4>
       </div>
       <div className="flex-grow flex justify-center items-center gap-8">
         <motion.div
@@ -23,7 +31,7 @@ const Navbar = () => {
         >
           <a href="#home" className="text-2xl">
             Home
-          </a>  
+          </a>
         </motion.div>
         <motion.div
           variants={linkVariants}
@@ -52,7 +60,7 @@ const Navbar = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <a href="#experience" className="text-2xl">
-            Experience 
+            Experience
           </a>
         </motion.div>
         <motion.div
@@ -65,8 +73,6 @@ const Navbar = () => {
             Contact
           </a>
         </motion.div>
-        
-
       </div>
       <div className="flex gap-4 text-2xl">
         <FaLinkedin />
