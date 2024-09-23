@@ -13,9 +13,11 @@ const Navbar = () => {
 
   const isMobile = window.innerWidth < 768;
 
-
   return (
-    <nav id="nav" className="mb-20 flex flex-col md:flex-row justify-between items-center py-6 px-4">
+    <nav
+      id="nav"
+      className="mb-20 flex flex-col md:flex-row justify-between items-center py-6 px-4"
+    >
       <div className="flex flex-shrink-0 items-center mb-4 md:mb-0">
         <motion.h4
           variants={linkVariants}
@@ -34,9 +36,9 @@ const Navbar = () => {
         {isOpen ? "✖" : "☰"}
       </button>
       <div
-        className={`flex-grow flex flex-col md:flex-row items-center gap-6 ${
+        className={`flex-grow flex flex-col md:flex-row items-center ${
           isOpen ? "flex" : "hidden"
-        } md:flex`}
+        } md:flex ${isMobile ? "gap-1" : "gap-6"}`}
       >
         {["home", "technologies", "projects", "experience", "contact"].map(
           (section, index) => (

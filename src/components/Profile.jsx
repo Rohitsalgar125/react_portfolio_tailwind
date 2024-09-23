@@ -18,6 +18,8 @@ const container = (delay) => ({
   },
 });
 
+const isMobile = window.innerWidth < 768;
+
 const Profile = () => {
   return (
     <div id="home" className=" border-b border-neutral-900 pb-4 lg:mb-35">
@@ -28,7 +30,7 @@ const Profile = () => {
               variants={container(0)}
               initial="hidden"
               animate="visible"
-              className="pb-16 text:6xl font-thin tracking-tight lg:mt-16 lg:text-8xl"
+              className={`pb-16  font-thin tracking-tight lg:mt-16 ${isMobile ? "text-4xl" : "text-8xl"}`}
             >
               {HERO_NAME}
             </motion.h1>
@@ -36,7 +38,7 @@ const Profile = () => {
               variants={container(0.6)}
               initial="hidden"
               animate="visible"
-              className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text:4xl tracking-tight text-transparent"
+              className={`bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text  ${isMobile ? "text-4xl" : "text-4xl"} tracking-tight text-transparent`}
             >
               {HERO_ROLE}
             </motion.span>
