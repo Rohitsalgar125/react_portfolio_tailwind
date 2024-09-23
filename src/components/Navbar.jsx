@@ -1,6 +1,7 @@
 import React from "react";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const linkVariants = {
@@ -28,9 +29,9 @@ const Navbar = () => {
           animate="animate"
           transition={{ duration: 0.5 }}
         >
-          <a href="#home" className="text-2xl">
+          <Link to="home" smooth={true} duration={500} className="text-2xl">
             Home
-          </a>
+          </Link>
         </motion.div>
         <motion.div
           variants={linkVariants}
@@ -38,9 +39,14 @@ const Navbar = () => {
           animate="animate"
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <a href="#technologies" className="text-2xl">
+          <Link
+            to="technologies"
+            smooth={true}
+            duration={500}
+            className="text-2xl"
+          >
             Technologies
-          </a>
+          </Link>
         </motion.div>
         <motion.div
           variants={linkVariants}
@@ -48,9 +54,14 @@ const Navbar = () => {
           animate="animate"
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <a href="#projects" className="text-2xl">
+          <Link
+            to="projects"
+            smooth={true}
+            duration={500}
+            className="text-2xl"
+          >
             Projects
-          </a>
+          </Link>
         </motion.div>
         <motion.div
           variants={linkVariants}
@@ -58,9 +69,14 @@ const Navbar = () => {
           animate="animate"
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <a href="#experience" className="text-2xl">
+          <Link
+            to="experience"
+            smooth={true}
+            duration={500}
+            className="text-2xl"
+          >
             Experience
-          </a>
+          </Link>
         </motion.div>
         <motion.div
           variants={linkVariants}
@@ -68,9 +84,9 @@ const Navbar = () => {
           animate="animate"
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <a href="#contact" className="text-2xl">
+          <Link to="contact" smooth={true} duration={500} className="text-2xl">
             Contact
-          </a>
+          </Link>
         </motion.div>
       </div>
       <div className="flex gap-4 text-2xl">
