@@ -1,6 +1,8 @@
 import React from "react";
 import { CONTACT } from "../constants";
 import { motion } from "framer-motion";
+import { IoIosArrowDropupCircle } from "react-icons/io";
+import { Link } from "react-scroll";
 
 const Contact = () => {
   return (
@@ -31,6 +33,15 @@ const Contact = () => {
         >
           {CONTACT.email}
         </a>
+      </motion.div>
+      <motion.div className="flex justify-end">
+        <Link to="nav" duration={1000} smooth={true}>
+          <IoIosArrowDropupCircle
+            color="white"
+            className=" cursor-pointer bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text:4xl tracking-tight text-transparent"
+            size={30}
+          />
+        </Link>
       </motion.div>
     </div>
   );

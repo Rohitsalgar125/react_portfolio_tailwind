@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 
 const Experience = () => {
   return (
-    <div id="experience" className="border-b border-neutral-900 pb-4">
+    <div id="experience" className="border-b border-neutral-800 pb-24">
       <motion.h1
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -100 }}
         transition={{ duration: 0.5 }}
         className="text-center text-4xl my-20"
       >

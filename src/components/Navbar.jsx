@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="mb-20 flex justify-between items-center py-6">
+    <nav id="nav" className="mb-20 flex justify-between items-center py-6">
       <div className="flex flex-shrink-0 items-center">
         <motion.h4
           variants={linkVariants}
@@ -54,12 +54,7 @@ const Navbar = () => {
           animate="animate"
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <Link
-            to="projects"
-            smooth={true}
-            duration={500}
-            className="text-2xl"
-          >
+          <Link to="projects" smooth={true} duration={500} className="text-2xl">
             Projects
           </Link>
         </motion.div>
