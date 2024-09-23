@@ -1,5 +1,5 @@
 import React from "react";
-import { HERO_CONTENT } from "../constants/index";
+import { HERO_CONTENT, HERO_NAME, HERO_ROLE } from "../constants/index";
 import profilepic from "../assets/kevinRushProfile.jpg";
 import { motion } from "framer-motion";
 
@@ -30,7 +30,7 @@ const Profile = () => {
               animate="visible"
               className="pb-16 text:6xl font-thin tracking-tight lg:mt-16 lg:text-8xl"
             >
-              Rohit Salgar
+              {HERO_NAME}
             </motion.h1>
             <motion.span
               variants={container(0.6)}
@@ -38,7 +38,7 @@ const Profile = () => {
               animate="visible"
               className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text:4xl tracking-tight text-transparent"
             >
-              MERN Stack Developer
+              {HERO_ROLE}
             </motion.span>
             <motion.p
               variants={container(1)}

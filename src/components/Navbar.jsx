@@ -11,15 +11,18 @@ const Navbar = () => {
     animate: { opacity: 1, y: 0 },
   };
 
+  const isMobile = window.innerWidth < 768;
+
+
   return (
-    <nav className="mb-20 flex flex-col md:flex-row justify-between items-center py-6 px-4">
+    <nav id="nav" className="mb-20 flex flex-col md:flex-row justify-between items-center py-6 px-4">
       <div className="flex flex-shrink-0 items-center mb-4 md:mb-0">
         <motion.h4
           variants={linkVariants}
           initial="initial"
           animate="animate"
           transition={{ duration: 0.5 }}
-          className="text-3xl mr-10"
+          className={`text-3xl mr-10  ${isMobile ? "ml-9" : ""}`}
         >
           RS
         </motion.h4>
