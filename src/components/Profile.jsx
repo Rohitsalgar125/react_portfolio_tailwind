@@ -63,6 +63,7 @@ const Profile = () => {
               transition={{ duration: 1, delay: 1.2 }}
               src={profilepic}
               alt="profile"
+              className="rounded-2xl"
             />
           </div>
         </div>
