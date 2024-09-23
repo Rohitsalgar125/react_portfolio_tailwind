@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
+import { GITHUB_URL, INSTA_URL, LINKEDIN_URL } from "../constants";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,17 +60,17 @@ const Navbar = () => {
       </div>
       <div className="flex gap-4 text-xl mt-4 md:mt-0">
         <a
-          href="https://www.linkedin.com"
+          href={LINKEDIN_URL}
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaLinkedin />
         </a>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+        <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
           <FaGithub />
         </a>
         <a
-          href="https://www.instagram.com"
+          href={INSTA_URL}
           target="_blank"
           rel="noopener noreferrer"
         >
