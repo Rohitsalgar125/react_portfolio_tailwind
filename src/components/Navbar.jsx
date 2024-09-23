@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav
       id="nav"
-      className="mb-20 flex flex-col md:flex-row justify-between items-center py-6 px-4"
+      className=" mb-20 flex flex-col md:flex-row justify-between items-center py-6 px-4"
     >
       <div className="flex flex-shrink-0 items-center mb-4 md:mb-0">
         <motion.h4
@@ -49,7 +49,7 @@ const Navbar = () => {
               initial="initial"
               animate="animate"
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-lg md:text-xl"
+              className="text-lg md:text-xl cursor-pointer hover:border-b border-indigo-300"
             >
               <Link to={section} smooth={true} duration={500}>
                 {section.charAt(0).toUpperCase() + section.slice(1)}
