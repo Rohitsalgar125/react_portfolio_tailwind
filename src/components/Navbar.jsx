@@ -59,21 +59,13 @@ const Navbar = () => {
         )}
       </div>
       <div className="flex gap-4 text-xl mt-4 md:mt-0">
-        <a
-          href={LINKEDIN_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
           <FaLinkedin />
         </a>
         <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
           <FaGithub />
         </a>
-        <a
-          href={INSTA_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href={INSTA_URL} target="_blank" rel="noopener noreferrer">
           <FaInstagram />
         </a>
       </div>
