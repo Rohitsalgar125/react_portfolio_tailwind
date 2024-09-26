@@ -22,22 +22,24 @@ const Contact = () => {
         className="text-center tracking-tighter"
       >
         <p className="my-4 bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text:4xl tracking-tight text-transparent">
-          {CONTACT.address}
+          <a href={`tel:${CONTACT.phoneNo}`} className="hover:underline">
+            {CONTACT.phoneNo}
+          </a>
         </p>
         <p className="my-4 bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text:4xl tracking-tight text-transparent">
-          {CONTACT.phoneNo}
+          <a href={`mailto:${CONTACT.email}`} className="hover:underline">
+            {CONTACT.email}
+          </a>
         </p>
-        <p
-          className="my-4 bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text:4xl tracking-tight text-transparent"
-        >
-          {CONTACT.email}
+        <p className="my-4 bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text:4xl tracking-tight text-transparent">
+          {CONTACT.address}
         </p>
       </motion.div>
       <motion.div className="flex justify-end">
         <Link to="nav" duration={1000} smooth={true}>
           <IoIosArrowDropupCircle
             color="white"
-            className=" cursor-pointer bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text:4xl tracking-tight text-transparent"
+            className="cursor-pointer bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text:4xl tracking-tight text-transparent"
             size={30}
           />
         </Link>
