@@ -27,12 +27,11 @@ const Contact = () => {
         <p className="my-4 bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text:4xl tracking-tight text-transparent">
           {CONTACT.phoneNo}
         </p>
-        <a
-          href="#"
+        <p
           className="my-4 bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text:4xl tracking-tight text-transparent"
         >
           {CONTACT.email}
-        </a>
+        </p>
       </motion.div>
       <motion.div className="flex justify-end">
         <Link to="nav" duration={1000} smooth={true}>

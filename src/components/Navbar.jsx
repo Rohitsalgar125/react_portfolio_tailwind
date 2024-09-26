@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav
       id="nav"
-      className=" mb-20 flex flex-col md:flex-row justify-between items-center py-6 px-4"
+      className="mb-20 flex flex-col md:flex-row justify-between items-center py-6 px-4"
     >
       <div className="flex flex-shrink-0 items-center mb-4 md:mb-0">
         <motion.h4
@@ -25,7 +25,7 @@ const Navbar = () => {
           initial="initial"
           animate="animate"
           transition={{ duration: 0.5 }}
-          className={`text-3xl mr-10  ${isMobile ? "ml-9" : ""}`}
+          className={`text-3xl mr-10 ${isMobile ? "ml-9" : ""}`}
         >
           RS
         </motion.h4>
@@ -37,7 +37,7 @@ const Navbar = () => {
         {isOpen ? "✖" : "☰"}
       </button>
       <div
-        className={`flex-grow flex flex-col md:flex-row items-center ${
+        className={`flex-grow flex flex-col md:flex-row items-center md:justify-center ${
           isOpen ? "flex" : "hidden"
         } md:flex ${isMobile ? "gap-1" : "gap-6"}`}
       >
