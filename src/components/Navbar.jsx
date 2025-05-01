@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 import { GITHUB_URL, INSTA_URL, LINKEDIN_URL } from "../constants";
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,15 +21,16 @@ const Navbar = () => {
       className="mb-20 flex flex-col md:flex-row justify-between items-center py-6 px-4"
     >
       <div className="flex flex-shrink-0 items-center mb-4 md:mb-0">
-        <motion.h4
+        <motion.div
           variants={linkVariants}
           initial="initial"
           animate="animate"
           transition={{ duration: 0.5 }}
           className={`text-3xl mr-10 ${isMobile ? "ml-9" : ""}`}
         >
-          RS
-        </motion.h4>
+          <img src={logo} alt="logo-name" className=" w-10 text-white"/>
+         
+        </motion.div>
       </div>
       <button
         onClick={() => setIsOpen(!isOpen)}

@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import React from "react";
 import { DiJavascript } from "react-icons/di";
 import { FaCss3, FaGithub, FaHtml5, FaNodeJs, FaWindows } from "react-icons/fa";
 import { RiReactjsLine } from "react-icons/ri";
 import { SiExpress, SiMongodb } from "react-icons/si";
 import { TbBrandNextjs } from "react-icons/tb";
 import { VscVscode } from "react-icons/vsc";
+import { useState } from "react";
 
 const iconVariants = (duration) => ({
   initial: { y: -10 },
@@ -21,8 +21,27 @@ const iconVariants = (duration) => ({
 });
 
 const Technologies = () => {
+  const [hoveredTech, setHoveredTech] = useState(null);
+
+  const techIcons = [
+    { icon: <FaHtml5 className="text-7xl text-orange-700" />, name: "HTML5" },
+    { icon: <FaCss3 className="text-7xl text-yellow-400" />, name: "CSS3" },
+    { icon: <DiJavascript className="text-7xl text-yellow-700" />, name: "JavaScript" },
+    { icon: <RiReactjsLine className="text-7xl text-cyan-700" />, name: "React" },
+    { icon: <TbBrandNextjs className="text-7xl text-black-700" />, name: "Next.js" },
+    { icon: <SiMongodb className="text-7xl text-green-700" />, name: "MongoDB" },
+    { icon: <SiExpress className="text-7xl text-black-500" />, name: "Express" },
+    { icon: <FaNodeJs className="text-7xl text-green-500" />, name: "Node.js" },
+  ];
+
+  const toolIcons = [
+    { icon: <FaGithub className="text-7xl text-gray-500" />, name: "GitHub" },
+    { icon: <VscVscode className="text-7xl text-blue-400" />, name: "VS Code" },
+    { icon: <FaWindows className="text-7xl text-blue-400" />, name: "Windows" },
+  ];
+
   return (
-    <div id="technologies" className="border-b border-neutral-800 pb-24 ">
+    <div id="technologies" className="border-b border-neutral-800 pb-24">
       <motion.h1
         whileInView={{ opacity: 1, x: 0 }}
         initial={{ opacity: 0, x: -100 }}
@@ -35,72 +54,30 @@ const Technologies = () => {
         whileInView={{ opacity: 1, x: 0 }}
         initial={{ opacity: 0, x: -100 }}
         transition={{ duration: 1.5 }}
-        className="flex flex-wrap items-center justify-center gap-4 "
+        className="flex flex-wrap items-center justify-center gap-4"
       >
-        <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 "
-        >
-          <FaHtml5 className="text-7xl text-orange-700" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 "
-        >
-          <FaCss3 className="text-7xl text-yellow-400" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 "
-        >
-          <DiJavascript className="text-7xl text-yellow-700" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(2.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 "
-        >
-          <RiReactjsLine className="text-7xl text-cyan-700" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(3)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 "
-        >
-          <TbBrandNextjs className="text-7xl text-black-700" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(3.5)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 "
-        >
-          <SiMongodb className="text-7xl text-green-700" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(4)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 "
-        >
-          <SiExpress className="text-7xl text-black-500" />
-        </motion.div>
-        <motion.div
-          variants={iconVariants(4)}
-          initial="initial"
-          animate="animate"
-          className="rounded-2xl border-4 border-neutral-800 "
-        >
-          <FaNodeJs className="text-7xl text-green-500" />
-        </motion.div>
+        {techIcons.map((tech, index) => (
+          <motion.div
+            key={index}
+            variants={iconVariants(2.5 + index * 0.5)}
+            initial="initial"
+            animate="animate"
+            className="relative rounded-2xl border-4 border-neutral-800 p-4"
+            onMouseEnter={() => setHoveredTech(tech.name)}
+            onMouseLeave={() => setHoveredTech(null)}
+          >
+            {tech.icon}
+            {hoveredTech === tech.name && (
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 bg-neutral-800 text-white px-2 py-1 rounded-md text-sm whitespace-nowrap"
+              >
+                {tech.name}
+              </motion.div>
+            )}
+          </motion.div>
+        ))}
       </motion.div>
       <motion.div
         whileInView={{ opacity: 1, x: 0 }}
@@ -112,7 +89,7 @@ const Technologies = () => {
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.5 }}
-          className=" text-center text-2xl"
+          className="text-center text-2xl"
         >
           Tools
         </motion.h4>
@@ -120,34 +97,30 @@ const Technologies = () => {
           whileInView={{ opacity: 1, x: 0 }}
           initial={{ opacity: 0, x: -100 }}
           transition={{ duration: 1.5 }}
-          className="flex flex-wrap items-center justify-center gap-4 m-4 "
+          className="flex flex-wrap items-center justify-center gap-4 m-4"
         >
-          <motion.div
-            variants={iconVariants(4)}
-            initial="initial"
-            animate="animate"
-            className="rounded-2xl border-4 border-neutral-800 "
-          >
-            <FaGithub className="text-7xl text-gray-500" />
-          </motion.div>
-          <motion.div
-            variants={iconVariants(4)}
-            initial="initial"
-            animate="animate"
-            className="rounded-2xl border-4 border-neutral-800 "
-          >
-            <VscVscode
- className="text-7xl text-blue-400" />
-          </motion.div>
-          <motion.div
-            variants={iconVariants(4)}
-            initial="initial"
-            animate="animate"
-            className="rounded-2xl border-4 border-neutral-800 "
-          >
-            <FaWindows
- className="text-7xl text-blue-400" />
-          </motion.div>
+          {toolIcons.map((tool, index) => (
+            <motion.div
+              key={index}
+              variants={iconVariants(4)}
+              initial="initial"
+              animate="animate"
+              className="relative rounded-2xl border-4 border-neutral-800 p-4"
+              onMouseEnter={() => setHoveredTech(tool.name)}
+              onMouseLeave={() => setHoveredTech(null)}
+            >
+              {tool.icon}
+              {hoveredTech === tool.name && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 bg-neutral-800 text-white px-2 py-1 rounded-md text-sm whitespace-nowrap"
+                >
+                  {tool.name}
+                </motion.div>
+              )}
+            </motion.div>
+          ))}
         </motion.div>
       </motion.div>
     </div>

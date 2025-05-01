@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import Aboutme from "../assets/about.jpg";
 import { ABOUT_TEXT } from "../constants";
-import { Element } from "react-scroll";
 
 const About = () => {
   return (

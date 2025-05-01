@@ -1,4 +1,3 @@
-import React from "react";
 import { HERO_CONTENT, HERO_NAME, HERO_ROLE } from "../constants/index";
 import profilepic from "../assets/kevinRushProfile.jpg";
 import { motion } from "framer-motion";
