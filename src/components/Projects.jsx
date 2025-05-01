@@ -16,7 +16,7 @@ const Projects = () => {
         {PROJECTS.map((project, index) => {
           return (
             <div key={index} className="mb-8 flex flex-wrap lg:justify-center">
-              <div className="w-full lg:w-1/4 ">
+              <div className="w-full lg:w-1/4">
                 <motion.img
                   whileInView={{
                     opacity: 1,
@@ -24,7 +24,7 @@ const Projects = () => {
                   }}
                   initial={{ opacity: 0, x: -100 }}
                   transition={{ duration: 1 }}
-                  className="mb-6 rounded "
+                  className="mb-6 rounded"
                   width={150}
                   height={150}
                   src={project.image}
@@ -52,6 +52,19 @@ const Projects = () => {
                     </span>
                   );
                 })}
+                {/* Added Live Demo Link */}
+                {project.liveLink && (
+                  <div className="mt-4">
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block rounded bg-purple-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-purple-700"
+                    >
+                      Live Demo
+                    </a>
+                  </div>
+                )}
               </motion.div>
             </div>
           );
