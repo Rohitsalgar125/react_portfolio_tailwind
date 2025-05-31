@@ -1,76 +1,87 @@
-import { PROJECTS } from "../constants";
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
+import { projects } from '../constants/projects';
 
 const Projects = () => {
   return (
-    <div id="projects" className="border-b border-neutral-800 pb-24">
-      <motion.h1
-        whileInView={{ opacity: 1, x: 0 }}
-        initial={{ opacity: 0, x: -100 }}
-        transition={{ duration: 0.5 }}
-        className="my-20 text-center text-4xl"
+    <section id="projects" className="py-20">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="max-w-6xl mx-auto"
       >
-        Projects
-      </motion.h1>
-      <div>
-        {PROJECTS.map((project, index) => {
-          return (
-            <div key={index} className="mb-8 flex flex-wrap lg:justify-center">
-              <div className="w-full lg:w-1/4">
-                <motion.img
-                  whileInView={{
-                    opacity: 1,
-                    x: 0,
-                  }}
-                  initial={{ opacity: 0, x: -100 }}
-                  transition={{ duration: 1 }}
-                  className="mb-6 rounded"
-                  width={150}
-                  height={150}
-                  src={project.image}
-                  alt={project.title}
-                />
+        <h2 className="text-3xl font-bold mb-12 text-center">
+          My <span className="text-indigo-600 dark:text-indigo-400">Projects</span>
+        </h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -10 }}
+              className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg"
+            >
+              <div className="h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                {project.img ? (
+                  <img src={project.img} alt={project.title} className="w-full h-full object-fill" />
+                ) : (
+                  <span className="text-gray-500">Project Preview</span>
+                )}
               </div>
-              <motion.div
-                whileInView={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                initial={{ opacity: 0, x: 100 }}
-                transition={{ duration: 1 }}
-                className="w-full max-w-xl lg:w-3/4"
-              >
-                <h6 className="mb-2 font-semibold">{project.title}</h6>
-                <p className="mb-4 text-neutral-400">{project.description}</p>
-                {project.technologies?.map((tech, i) => {
-                  return (
+              
+              <div className="p-6">
+                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+                
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.map((tech, i) => (
                     <span
-                      className="mr-2 mt-4 rounded bg-neutral-900 px-2 py-1 text-sm font-medium text-purple-800"
                       key={i}
+                      className="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-200 rounded-full text-sm"
                     >
                       {tech}
                     </span>
-                  );
-                })}
-                {/* Added Live Demo Link */}
-                {project.liveLink && (
-                  <div className="mt-4">
-                    <a
-                      href={project.liveLink}
+                  ))}
+                </div>
+                
+                <div className="flex space-x-4">
+                  {project.liveUrl && (
+                    <motion.a
+                      href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-block rounded bg-purple-800 px-4 py-2 text-sm font-medium text-white transition hover:bg-purple-700"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="px-4 py-2 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-colors"
                     >
                       Live Demo
-                    </a>
-                  </div>
-                )}
-              </motion.div>
-            </div>
-          );
-        })}
-      </div>
-    </div>
+                    </motion.a>
+                  )}
+                  
+                  {project.codeUrl && (
+                    <motion.a
+                      href={project.codeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="px-4 py-2 border border-indigo-600 text-indigo-600 dark:text-indigo-400 rounded-lg font-medium hover:bg-indigo-50 dark:hover:bg-gray-700 transition-colors"
+                    >
+                      View Code
+                    </motion.a>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </section>
   );
 };
 
