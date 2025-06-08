@@ -23,7 +23,7 @@ const Header = ({ darkMode, setDarkMode }) => {
             transition={{ duration: 0.5 }}
             className="text-xl font-bold text-indigo-600 dark:text-indigo-400"
           >
-            Rohit Salgar
+            Rohit S
           </motion.a>
           
           <nav className="hidden md:flex space-x-8">
