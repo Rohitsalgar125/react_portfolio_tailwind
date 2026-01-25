@@ -19,11 +19,11 @@ const Hero = () => {
             </span>
           </h1>
           <h2 className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-6">
-            Front-End Developer
+           Senior Front-End Developer
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
             I build exceptional digital experiences with modern web
-            technologies. With over 3+ years of professional experience in
+            technologies. With over 4+ years of professional experience in
             designing and implementing scalable web-based applications.
           </p>
 
